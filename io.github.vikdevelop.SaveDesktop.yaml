@@ -25,6 +25,8 @@ finish-args:
     - --filesystem=~/.config/Thunar
     # save config to tar.gz archive in this directory
     - --filesystem=xdg-download/SaveDesktop:create
+    # to be able to select the archive also from the xdg-downloads folder
+    - --filesystem=xdg-download
     # save all themes installed in home folder
     - --filesystem=~/.themes
     # save all icons installed in home folder
@@ -50,5 +52,5 @@ modules:
        - cp -R translations /app/
     sources:
           - type: archive
-            url:  https://github.com/vikdevelop/SaveDesktop/archive/refs/tags/1.0.6.tar.gz
-            sha256: ccafd736e354316729dfa14d67d9280896a7bf682a820172fa1ea28d9399059b
+            url:  https://github.com/vikdevelop/SaveDesktop/archive/refs/tags/1.1.1.tar.gz
+            sha256: 97091cfe727538409b8921478452a08f8ba95478f692b5d8f73ef6c6e329a3bb
