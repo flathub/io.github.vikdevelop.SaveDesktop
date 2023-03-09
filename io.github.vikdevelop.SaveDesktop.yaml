@@ -23,6 +23,8 @@ finish-args:
     - --filesystem=~/.config/pop-shell
     - --filesystem=~/.config/xfce4
     - --filesystem=~/.config/Thunar
+    - --filesystem=~/.config/plank
+    - --filesystem=~/.config/marlin
     # save config to tar.gz archive in this directory
     - --filesystem=xdg-download/SaveDesktop:create
     # to be able to select the archive also from the xdg-downloads folder
@@ -52,5 +54,5 @@ modules:
        - cp -R translations /app/
     sources:
           - type: archive
-            url:  https://github.com/vikdevelop/SaveDesktop/archive/refs/tags/1.1.1.tar.gz
-            sha256: 97091cfe727538409b8921478452a08f8ba95478f692b5d8f73ef6c6e329a3bb
+            url:  https://github.com/vikdevelop/SaveDesktop/archive/refs/tags/1.2.1.tar.gz
+            sha256: bd82d87bbec70b4d19b70f710d13c2e539f52cb696ce9a90b60cfa8032dbd39d
