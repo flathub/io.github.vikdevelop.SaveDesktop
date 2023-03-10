@@ -25,6 +25,7 @@ finish-args:
     - --filesystem=~/.config/Thunar
     - --filesystem=~/.config/plank
     - --filesystem=~/.config/marlin
+    - --filesystem=~/.config/caja
     # save config to tar.gz archive in this directory
     - --filesystem=xdg-download/SaveDesktop:create
     # to be able to select the archive also from the xdg-downloads folder
@@ -54,5 +55,5 @@ modules:
        - cp -R translations /app/
     sources:
           - type: archive
-            url:  https://github.com/vikdevelop/SaveDesktop/archive/refs/tags/1.2.1.tar.gz
-            sha256: bd82d87bbec70b4d19b70f710d13c2e539f52cb696ce9a90b60cfa8032dbd39d
+            url:  https://github.com/vikdevelop/SaveDesktop/archive/refs/tags/1.3.tar.gz
+            sha256: d41cd1b8c64bf06431cf9d1976272d60d0d8a3816c55d93250023c175ee1970e
