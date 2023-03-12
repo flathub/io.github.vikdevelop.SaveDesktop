@@ -31,13 +31,13 @@ finish-args:
     # to be able to select the archive also from the xdg-downloads folder
     - --filesystem=xdg-download
     # save all themes installed in home folder
-    - --filesystem=~/.themes
+    - --filesystem=~/.themes:create
     # save all icons installed in home folder
-    - --filesystem=~/.icons
+    - --filesystem=~/.icons:create
     # save cinnamon config in home directory
-    - --filesystem=~/.cinnamon
+    - --filesystem=~/.cinnamon:create
     # save xfce config in home directory
-    - --filesystem=~/.xfce4
+    - --filesystem=~/.xfce4:create
     # logout from session (GNOME-based environments) for changes to the desktop configuration to take effect 
     - --talk-name=org.gnome.SessionManager
     # logout from session (Xfce) for changes to the Xfce desktop configuration to take effect
@@ -55,5 +55,5 @@ modules:
        - cp -R translations /app/
     sources:
           - type: archive
-            url:  https://github.com/vikdevelop/SaveDesktop/archive/refs/tags/1.4.tar.gz
-            sha256: c66c958b601a87f593e5f9af11f79b8c31584761db7e681281528e48cb447e5e
+            url:  https://github.com/vikdevelop/SaveDesktop/archive/refs/tags/1.5.tar.gz
+            sha256: ff591a66725dd5063cf58048026e50c02630f7cd96128a2d81304fc436404920
