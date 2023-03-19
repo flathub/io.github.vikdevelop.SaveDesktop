@@ -9,7 +9,7 @@ finish-args:
     - --socket=fallback-x11
     - --device=dri
     # save xdg-data dirs
-    - --filesystem=~/.local/share/backgrounds
+    - --filesystem=~/.local/share/backgrounds:create
     - --filesystem=~/.local/share/gnome-background-properties:create
     - --filesystem=~/.local/share/icons
     - --filesystem=~/.local/share/gnome-shell:create
@@ -55,5 +55,5 @@ modules:
        - cp -R translations /app/
     sources:
           - type: archive
-            url:  https://github.com/vikdevelop/SaveDesktop/archive/refs/tags/1.7.tar.gz
-            sha256: e6f81589a9411c51473643c78e4366cc0a0c9606555ff4851cead45b31f7706d
+            url:  https://github.com/vikdevelop/SaveDesktop/archive/refs/tags/1.7.1.tar.gz
+            sha256: 17bcd1cab0629347f16f027da51884ea99dd36ba924726ce52a5632007ce2792
