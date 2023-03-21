@@ -14,6 +14,7 @@ finish-args:
     - --filesystem=~/.local/share/icons
     - --filesystem=~/.local/share/gnome-shell:create
     - --filesystem=~/.local/share/cinnamon
+    - --filesystem=~/.local/share/nautilus-python
     # save xdg-config dirs
     - --filesystem=~/.config/dconf
     - --filesystem=~/.config/gnome-control-center
@@ -26,6 +27,8 @@ finish-args:
     - --filesystem=~/.config/plank
     - --filesystem=~/.config/marlin
     - --filesystem=~/.config/caja
+    - --filesystem=~/.config/gtk-4.0
+    - --filesystem=~/.config/gtk-3.0
     # save config to tar.gz archive in this directory
     - --filesystem=xdg-download/SaveDesktop:create
     # to be able to select the archive also from the xdg-downloads folder
@@ -38,6 +41,8 @@ finish-args:
     - --filesystem=~/.cinnamon:create
     # save xfce config in home directory
     - --filesystem=~/.xfce4:create
+    # save all fonts installed in home directory
+    - --filesystem=~/.fonts:create
     # logout from session (GNOME-based environments) for changes to the desktop configuration to take effect 
     - --talk-name=org.gnome.SessionManager
     # logout from session (Xfce) for changes to the Xfce desktop configuration to take effect
@@ -55,5 +60,5 @@ modules:
        - cp -R translations /app/
     sources:
           - type: archive
-            url:  https://github.com/vikdevelop/SaveDesktop/archive/refs/tags/1.8.tar.gz
-            sha256: 84278cc2a6ed52c4d441ff2f1140653cee8820b43cc8fce7971459fe8b159e28
+            url:  https://github.com/vikdevelop/SaveDesktop/archive/refs/tags/1.8.1.tar.gz
+            sha256: 6709de5e2c4cd0cb75c46dbbaf151a95c62dcc9a1b04a89780d4cf91ade09be5
