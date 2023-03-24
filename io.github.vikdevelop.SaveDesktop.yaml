@@ -8,27 +8,10 @@ finish-args:
     - --socket=wayland
     - --socket=fallback-x11
     - --device=dri
-    # save xdg-data dirs
-    - --filesystem=~/.local/share/backgrounds:create
-    - --filesystem=~/.local/share/gnome-background-properties:create
-    - --filesystem=~/.local/share/icons
-    - --filesystem=~/.local/share/gnome-shell:create
-    - --filesystem=~/.local/share/cinnamon
-    - --filesystem=~/.local/share/nautilus-python
-    # save xdg-config dirs
-    - --filesystem=~/.config/dconf
-    - --filesystem=~/.config/gnome-control-center
-    - --filesystem=~/.config/nemo
-    - --filesystem=~/.config/budgie-desktop
-    - --filesystem=~/.config/budgie-extras
-    - --filesystem=~/.config/pop-shell
-    - --filesystem=~/.config/xfce4
-    - --filesystem=~/.config/Thunar
-    - --filesystem=~/.config/plank
-    - --filesystem=~/.config/marlin
-    - --filesystem=~/.config/caja
-    - --filesystem=~/.config/gtk-4.0
-    - --filesystem=~/.config/gtk-3.0
+    # load Desktop environment config files
+    - --filesystem=~/.config
+    # load Desktop environment data files (e.g. backgrounds, extensions, etc.)
+    - --filesystem=~/.local/share
     # save config to tar.gz archive in this directory
     - --filesystem=xdg-download/SaveDesktop:create
     # to be able to select the archive also from the xdg-downloads folder
@@ -47,6 +30,8 @@ finish-args:
     - --talk-name=org.gnome.SessionManager
     # logout from session (Xfce) for changes to the Xfce desktop configuration to take effect
     - --talk-name=org.xfce.SessionManager
+    # logout from session (KDE5) for changes to the KDE5 desktop configuration to take effect
+    - --talk-name=org.kde.ksmserver
 modules:
   - name: savedesktop
     buildsystem: simple
@@ -60,5 +45,5 @@ modules:
        - cp -R translations /app/
     sources:
           - type: archive
-            url:  https://github.com/vikdevelop/SaveDesktop/archive/refs/tags/1.8.1.tar.gz
-            sha256: 6709de5e2c4cd0cb75c46dbbaf151a95c62dcc9a1b04a89780d4cf91ade09be5
+            url:  https://github.com/vikdevelop/SaveDesktop/archive/refs/tags/1.9.tar.gz
+            sha256: 7f97a4c956d28448be6b352a96f5212880ed69d3f75158c4f0b1d9f6b6ce1217
