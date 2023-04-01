@@ -38,6 +38,7 @@ modules:
     build-commands:
        - install -Dm755 -t /app/bin run.sh
        - install -Dm755 -t /app src/main_window.py
+       - install -Dm755 -t /app src/periodic_saving.py
        - install -D -t /app/share/applications flatpak/io.github.vikdevelop.SaveDesktop.desktop
        - install -D -t /app/share/icons/hicolor/128x128/apps flatpak/icons/io.github.vikdevelop.SaveDesktop.png
        - install -D -t /app/share/icons/hicolor/128x128/apps flatpak/symbolic-icons/exclamation_mark.png
@@ -45,5 +46,5 @@ modules:
        - cp -R translations /app/
     sources:
           - type: archive
-            url:  https://github.com/vikdevelop/SaveDesktop/archive/refs/tags/2.0.1.tar.gz
-            sha256: c76f30a43bb21e89824b1ff701895deb01222c42411f571ab486750a5550f769
+            url:  https://github.com/vikdevelop/SaveDesktop/archive/refs/tags/2.1.tar.gz
+            sha256: f033aa37acbc459778628e2c09a16576983a2462bd8223999dbffe968344fcf7
