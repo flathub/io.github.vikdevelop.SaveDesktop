@@ -1,6 +1,6 @@
 app-id: io.github.vikdevelop.SaveDesktop
 runtime: org.gnome.Platform
-runtime-version: '43'
+runtime-version: '44'
 sdk: org.gnome.Sdk
 command: run.sh
 finish-args:
@@ -12,6 +12,8 @@ finish-args:
     - --filesystem=~/.config
     # load Desktop environment data files (e.g. backgrounds, extensions, etc.)
     - --filesystem=~/.local/share
+    # load Flatpak custom permissions for including to configuration
+    - --filesystem=~/.local/share/flatpak/overrides
     # save config to tar.gz archive in this directory
     - --filesystem=xdg-download/SaveDesktop:create
     # to be able to select the archive also from the xdg-downloads folder
@@ -32,6 +34,8 @@ finish-args:
     - --talk-name=org.xfce.SessionManager
     # logout from session (KDE5) for changes to the KDE5 desktop configuration to take effect
     - --talk-name=org.kde.ksmserver
+    # ensuring to FileChooserNative will work correctly
+    - --talk-name=org.freedesktop.FileManager1
 modules:
   - name: savedesktop
     buildsystem: simple
@@ -42,9 +46,10 @@ modules:
        - install -D -t /app/share/applications flatpak/io.github.vikdevelop.SaveDesktop.desktop
        - install -D -t /app/share/icons/hicolor/128x128/apps flatpak/icons/io.github.vikdevelop.SaveDesktop.png
        - install -D -t /app/share/icons/hicolor/128x128/apps flatpak/symbolic-icons/exclamation_mark.png
+       - install -D -t /app/share/icons/hicolor/128x128/apps flatpak/symbolic-icons/desktop-symbolic.svg
        - install -D -t /app/share/metainfo flatpak/io.github.vikdevelop.SaveDesktop.metainfo.xml
        - cp -R translations /app/
     sources:
           - type: archive
-            url:  https://github.com/vikdevelop/SaveDesktop/archive/refs/tags/2.1.1.tar.gz
-            sha256: 3de0d3681a3997d7b07eead1712591166981d81eff691b7178e4f4d27d47e139
+            url:  https://github.com/vikdevelop/SaveDesktop/archive/refs/tags/2.2.tar.gz
+            sha256: 4d172c491ac01fb6c73b31434045bc6e37666f25220e8d8124da609346c799f9
