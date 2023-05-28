@@ -12,8 +12,6 @@ finish-args:
     - --filesystem=~/.config
     # load Desktop environment data files (e.g. backgrounds, extensions, etc.)
     - --filesystem=~/.local/share
-    # load Flatpak custom permissions for including to configuration
-    - --filesystem=~/.local/share/flatpak/overrides
     # to be able to select destination for saving configuration in also these directories
     - --filesystem=xdg-download
     - --filesystem=xdg-music
