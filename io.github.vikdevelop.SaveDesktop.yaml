@@ -30,6 +30,7 @@ finish-args:
     - --filesystem=~/.xfce4:create
     # save all fonts installed in home directory
     - --filesystem=~/.fonts:create
+    - --filesystem=/var/lib/flatpak:ro
     # logout from session (GNOME-based environments) for changes to the desktop configuration to take effect 
     - --talk-name=org.gnome.SessionManager
     # logout from session (Xfce) for changes to the Xfce desktop configuration to take effect
@@ -39,8 +40,6 @@ finish-args:
     # ensuring to FileChooserNative will work correctly
     - --talk-name=org.freedesktop.FileManager1
     - --talk-name=org.freedesktop.portal.FileChooser
-    # install Flatpak apps and create list of installed Flatpak apps
-    - --talk-name=org.freedesktop.Flatpak
 modules:
   - name: savedesktop
     buildsystem: simple
@@ -62,5 +61,5 @@ modules:
        - cp -R translations /app/
     sources:
           - type: archive
-            url:  https://github.com/vikdevelop/SaveDesktop/archive/refs/tags/2.5.tar.gz
-            sha256: c8937b114bea3739a1040aab567177837d2a8d71aa5eb42810e882666e95a5b0
+            url:  https://github.com/vikdevelop/SaveDesktop/archive/refs/tags/2.5.1.tar.gz
+            sha256: 0910754cc64bee0f4b7f246a271dfa28bb33a874ca46a4f0d72c9e71dbf535cf
