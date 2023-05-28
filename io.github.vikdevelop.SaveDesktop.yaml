@@ -41,6 +41,8 @@ finish-args:
     # ensuring to FileChooserNative will work correctly
     - --talk-name=org.freedesktop.FileManager1
     - --talk-name=org.freedesktop.portal.FileChooser
+    # install Flatpak apps and create list of installed Flatpak apps
+    - --talk-name=org.freedesktop.Flatpak
 modules:
   - name: savedesktop
     buildsystem: simple
@@ -48,6 +50,8 @@ modules:
        - install -Dm755 -t /app/bin run.sh
        - install -Dm755 -t /app src/main_window.py
        - install -Dm755 -t /app src/periodic_saving.py
+       - install -Dm755 -t /app src/install_flatpak_from_script.py
+       - install -Dm755 -t /app src/backup_flatpaks.sh
        - install -D -t /app/share/applications flatpak/io.github.vikdevelop.SaveDesktop.desktop
        - install -D -t /app/share/icons/hicolor/scalable/apps flatpak/icons/io.github.vikdevelop.SaveDesktop.svg
        - install -D -t /app/share/icons/hicolor/scalable/apps flatpak/icons/io.github.vikdevelop.SaveDesktop.Devel.svg
@@ -55,8 +59,10 @@ modules:
        - install -D -t /app/share/icons/hicolor/128x128/apps flatpak/symbolic-icons/exclamation_mark.png
        - install -D -t /app/share/icons/hicolor/128x128/apps flatpak/symbolic-icons/desktop-symbolic.svg
        - install -D -t /app/share/metainfo flatpak/io.github.vikdevelop.SaveDesktop.metainfo.xml
+       - install -D -t /app/share/glib-2.0/schemas flatpak/io.github.vikdevelop.SaveDesktop.gschema.xml
+       - glib-compile-schemas /app/share/glib-2.0/schemas
        - cp -R translations /app/
     sources:
           - type: archive
-            url:  https://github.com/vikdevelop/SaveDesktop/archive/refs/tags/2.4.4.tar.gz
-            sha256: 9fc2056cbb91daf149d8636e767427a1f048151792f6096de78ea5acb709784d
+            url:  https://github.com/vikdevelop/SaveDesktop/archive/refs/tags/2.5.tar.gz
+            sha256: c8937b114bea3739a1040aab567177837d2a8d71aa5eb42810e882666e95a5b0
