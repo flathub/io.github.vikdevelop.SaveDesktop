@@ -12,8 +12,6 @@ finish-args:
     - --filesystem=~/.config
     # load Desktop environment data files (e.g. backgrounds, extensions, etc.)
     - --filesystem=~/.local/share
-    # load Flatpak custom permissions for including to configuration
-    - --filesystem=~/.local/share/flatpak/overrides
     # to be able to select destination for saving configuration in also these directories
     - --filesystem=xdg-download
     - --filesystem=xdg-music
@@ -32,6 +30,7 @@ finish-args:
     - --filesystem=~/.xfce4:create
     # save all fonts installed in home directory
     - --filesystem=~/.fonts:create
+    - --filesystem=/var/lib/flatpak:ro
     # logout from session (GNOME-based environments) for changes to the desktop configuration to take effect 
     - --talk-name=org.gnome.SessionManager
     # logout from session (Xfce) for changes to the Xfce desktop configuration to take effect
@@ -48,6 +47,8 @@ modules:
        - install -Dm755 -t /app/bin run.sh
        - install -Dm755 -t /app src/main_window.py
        - install -Dm755 -t /app src/periodic_saving.py
+       - install -Dm755 -t /app src/install_flatpak_from_script.py
+       - install -Dm755 -t /app src/backup_flatpaks.sh
        - install -D -t /app/share/applications flatpak/io.github.vikdevelop.SaveDesktop.desktop
        - install -D -t /app/share/icons/hicolor/scalable/apps flatpak/icons/io.github.vikdevelop.SaveDesktop.svg
        - install -D -t /app/share/icons/hicolor/scalable/apps flatpak/icons/io.github.vikdevelop.SaveDesktop.Devel.svg
@@ -55,8 +56,10 @@ modules:
        - install -D -t /app/share/icons/hicolor/128x128/apps flatpak/symbolic-icons/exclamation_mark.png
        - install -D -t /app/share/icons/hicolor/128x128/apps flatpak/symbolic-icons/desktop-symbolic.svg
        - install -D -t /app/share/metainfo flatpak/io.github.vikdevelop.SaveDesktop.metainfo.xml
+       - install -D -t /app/share/glib-2.0/schemas flatpak/io.github.vikdevelop.SaveDesktop.gschema.xml
+       - glib-compile-schemas /app/share/glib-2.0/schemas
        - cp -R translations /app/
     sources:
           - type: archive
-            url:  https://github.com/vikdevelop/SaveDesktop/archive/refs/tags/2.4.4.tar.gz
-            sha256: 9fc2056cbb91daf149d8636e767427a1f048151792f6096de78ea5acb709784d
+            url:  https://github.com/vikdevelop/SaveDesktop/archive/refs/tags/2.5.1.tar.gz
+            sha256: 0910754cc64bee0f4b7f246a271dfa28bb33a874ca46a4f0d72c9e71dbf535cf
