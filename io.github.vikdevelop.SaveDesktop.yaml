@@ -63,4 +63,4 @@ modules:
     sources:
           - type: archive
             url:  https://github.com/vikdevelop/SaveDesktop/archive/refs/tags/2.6.2.tar.gz
-            sha256: aab415f7891479c2cd41163c5942c52fe8f19de5753f21b1a3544996fa430179
+            sha256: 0cb0acf8b496040dad3a11aedf5db24c32eadbf617a3f437ad0e1fd5436b0272
