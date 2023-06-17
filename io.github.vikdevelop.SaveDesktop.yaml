@@ -63,5 +63,5 @@ modules:
        - cp -R translations /app/
     sources:
           - type: archive
-            url:  https://github.com/vikdevelop/SaveDesktop/archive/refs/tags/2.6.3.tar.gz
-            sha256: 03c5c465eae75f0f3b69271a79a2b9c279de945f1e4fbb8327e42840905dee6e
+            url:  https://github.com/vikdevelop/SaveDesktop/archive/refs/tags/2.6.3b.tar.gz
+            sha256: 4e6ee12ae0e05d0f4911c815e577d18b020da87f30c45d7c463d799582d1cf68
