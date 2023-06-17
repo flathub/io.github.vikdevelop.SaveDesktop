@@ -10,6 +10,7 @@ finish-args:
     - --device=dri
     # load Desktop environment config files
     - --filesystem=~/.config
+    - --filesystem=~/.config/autostart:create
     # load Desktop environment data files (e.g. backgrounds, extensions, etc.)
     - --filesystem=~/.local/share
     # to be able to select destination for saving configuration in also these directories
