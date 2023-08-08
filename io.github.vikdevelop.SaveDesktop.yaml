@@ -56,12 +56,11 @@ modules:
        - install -D -t /app/share/icons/hicolor/128x128/apps flatpak/symbolic-icons/exclamation_mark.png
        - install -D -t /app/share/icons/hicolor/128x128/apps flatpak/symbolic-icons/desktop-symbolic.svg
        - install -D -t /app/share/icons/hicolor/128x128/apps flatpak/symbolic-icons/list-view.png
-       - install -D -t /app/share/icons/hicolor/128x128/apps flatpak/symbolic-icons/preferences-system-symbolic.svg
        - install -D -t /app/share/metainfo flatpak/io.github.vikdevelop.SaveDesktop.metainfo.xml
        - install -D -t /app/share/glib-2.0/schemas flatpak/io.github.vikdevelop.SaveDesktop.gschema.xml
        - glib-compile-schemas /app/share/glib-2.0/schemas
        - cp -R translations /app/
     sources:
           - type: archive
-            url:  https://github.com/vikdevelop/SaveDesktop/archive/refs/tags/2.8.1.tar.gz
-            sha256: acb69b304cc4b1d03070e06a16f418759d7134cebb6bd48618d2a62c837669ef
+            url:  https://github.com/vikdevelop/SaveDesktop/archive/refs/tags/2.8.2.tar.gz
+            sha256: 6ce3095f05c661046d51a64c969ec71cb2ad5b0e78c8647fa60dd42444892d82
