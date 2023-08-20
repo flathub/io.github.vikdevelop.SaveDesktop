@@ -5,6 +5,7 @@ sdk: org.gnome.Sdk
 command: run.sh
 finish-args:
     - --share=ipc
+    - --share=network
     - --socket=wayland
     - --socket=fallback-x11
     - --device=dri
@@ -31,7 +32,7 @@ finish-args:
     # save all fonts installed in home directory
     - --filesystem=~/.fonts:create
     - --filesystem=/var/lib/flatpak:ro
-    # logout from session (GNOME-based environments) for changes to the desktop configuration to take effect 
+    # logout from session (GNOME-based environments) for changes to the desktop configuration to take effect
     - --talk-name=org.gnome.SessionManager
     # logout from session (Xfce) for changes to the Xfce desktop configuration to take effect
     - --talk-name=org.xfce.SessionManager
@@ -48,6 +49,8 @@ modules:
        - install -Dm755 -t /app src/main_window.py
        - install -Dm755 -t /app src/periodic_saving.py
        - install -Dm755 -t /app src/install_flatpak_from_script.py
+       - install -Dm755 -t /app src/server.py
+       - install -Dm755 -t /app src/network_sharing.py
        - install -Dm755 -t /app src/backup_flatpaks.sh
        - install -D -t /app/share/applications flatpak/io.github.vikdevelop.SaveDesktop.desktop
        - install -D -t /app/share/icons/hicolor/scalable/apps flatpak/icons/io.github.vikdevelop.SaveDesktop.svg
@@ -62,5 +65,5 @@ modules:
        - cp -R translations /app/
     sources:
           - type: archive
-            url:  https://github.com/vikdevelop/SaveDesktop/archive/refs/tags/2.8.2.tar.gz
-            sha256: 6ce3095f05c661046d51a64c969ec71cb2ad5b0e78c8647fa60dd42444892d82
+            url:  https://github.com/vikdevelop/SaveDesktop/archive/refs/tags/2.9.tar.gz
+            sha256: 8cbc5d13fa25f14d4d0d16fcbb3c90ff91aeca8f569b98f414c3c2a6d4cfc222
