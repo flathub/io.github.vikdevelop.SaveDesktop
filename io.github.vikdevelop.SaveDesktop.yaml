@@ -1,6 +1,6 @@
 app-id: io.github.vikdevelop.SaveDesktop
 runtime: org.gnome.Platform
-runtime-version: '44'
+runtime-version: '45'
 sdk: org.gnome.Sdk
 command: run.sh
 finish-args:
@@ -41,7 +41,18 @@ finish-args:
     # ensuring to FileChooserNative will work correctly
     - --talk-name=org.freedesktop.FileManager1
     - --talk-name=org.freedesktop.portal.FileChooser
+    - --env=DCONF_USER_CONFIG_DIR=.config/dconf
+    - --filesystem=xdg-run/dconf
+    - --talk-name=ca.desrt.dconf
 modules:
+  - name: dconf
+    buildsystem: simple
+    build-commands:
+      - cp -R * /app
+    sources:
+      - type: archive
+        url: https://github.com/vikdevelop/SaveDesktop/releases/download/2.9.5/dconf_build.tar.xz
+        sha256: 164fc714f96ef4b348665fc3617f54cfa5acf12df5c039d7a9d21ba1d86a2f2d
   - name: savedesktop
     buildsystem: simple
     build-commands:
@@ -53,6 +64,7 @@ modules:
        - install -Dm755 -t /app src/network_sharing.py
        - install -Dm755 -t /app src/open_wiki.py
        - install -Dm755 -t /app src/backup_flatpaks.sh
+       - install -Dm755 -t /app src/localization.py
        - install -D -t /app/share/applications flatpak/io.github.vikdevelop.SaveDesktop.desktop
        - install -D -t /app/share/icons/hicolor/scalable/apps flatpak/icons/io.github.vikdevelop.SaveDesktop.svg
        - install -D -t /app/share/icons/hicolor/scalable/apps flatpak/icons/io.github.vikdevelop.SaveDesktop.Devel.svg
@@ -66,5 +78,5 @@ modules:
        - cp -R translations /app/
     sources:
           - type: archive
-            url:  https://github.com/vikdevelop/SaveDesktop/archive/refs/tags/2.9.4t.tar.gz
-            sha256: 29c33f4fcad55694dea09cac0aa577e65684471c04df5ed40c8eafff070e1622
+            url:  https://github.com/vikdevelop/SaveDesktop/archive/refs/tags/2.9.5.tar.gz
+            sha256: 93f808e83649046d839825ec2cb95c571b41d2319208460c3d6510f489e036a3
