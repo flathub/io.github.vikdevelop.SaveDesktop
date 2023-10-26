@@ -51,7 +51,7 @@ modules:
       - cp -R * /app
     sources:
       - type: archive
-        url: https://github.com/vikdevelop/SaveDesktop/releases/download/2.9.5/dconf_build.tar.xz
+        url: https://github.com/vikdevelop/SaveDesktop/releases/download/2.9.5n/dconf_build.tar.xz
         sha256: 164fc714f96ef4b348665fc3617f54cfa5acf12df5c039d7a9d21ba1d86a2f2d
   - name: savedesktop
     buildsystem: simple
@@ -78,5 +78,5 @@ modules:
        - cp -R translations /app/
     sources:
           - type: archive
-            url:  https://github.com/vikdevelop/SaveDesktop/archive/refs/tags/2.9.7.tar.gz
-            sha256: 426f925411b9e20b2db3a83629651e4027c7672da963f6e98d79a2b1f85e1864
+            url:  https://github.com/vikdevelop/SaveDesktop/archive/refs/tags/2.9.8.tar.gz
+            sha256: f83bf060cfa10ce2d891be73a5b57e99b4604843bcdbf817129a955f10d590f2
