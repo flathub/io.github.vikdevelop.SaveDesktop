@@ -79,4 +79,4 @@ modules:
     sources:
           - type: archive
             url:  https://github.com/vikdevelop/SaveDesktop/archive/refs/tags/2.9.9.tar.gz
-            sha256: 7e434e85d096a2694c5ee6f98c46e52aa031bd3f7be6b34afd97169438d85bbc
+            sha256: c5d431a5343bb1a5ade33424f812856e420b202826e5e0c8f3cf46375cb256e7
