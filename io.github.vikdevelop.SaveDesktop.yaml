@@ -31,7 +31,11 @@ finish-args:
     - --filesystem=~/.xfce4:create
     # save all fonts installed in home directory
     - --filesystem=~/.fonts:create
+    # save a list of installed flatpak apps
     - --filesystem=/var/lib/flatpak:ro
+    - --filesystem=~/.local/share/flatpak/app:ro
+    # save user data of installed flatpak apps
+    - --filesystem=~/.var/app:ro
     # logout from session (GNOME-based environments) for changes to the desktop configuration to take effect
     - --talk-name=org.gnome.SessionManager
     # logout from session (Xfce) for changes to the Xfce desktop configuration to take effect
@@ -57,14 +61,7 @@ modules:
     buildsystem: simple
     build-commands:
        - install -Dm755 -t /app/bin run.sh
-       - install -Dm755 -t /app src/main_window.py
-       - install -Dm755 -t /app src/periodic_saving.py
-       - install -Dm755 -t /app src/install_flatpak_from_script.py
-       - install -Dm755 -t /app src/server.py
-       - install -Dm755 -t /app src/network_sharing.py
-       - install -Dm755 -t /app src/open_wiki.py
-       - install -Dm755 -t /app src/backup_flatpaks.sh
-       - install -Dm755 -t /app src/localization.py
+       - cp -R src/* /app
        - install -D -t /app/share/applications flatpak/io.github.vikdevelop.SaveDesktop.desktop
        - install -D -t /app/share/icons/hicolor/scalable/apps flatpak/icons/io.github.vikdevelop.SaveDesktop.svg
        - install -D -t /app/share/icons/hicolor/scalable/apps flatpak/icons/io.github.vikdevelop.SaveDesktop.Devel.svg
@@ -78,5 +75,5 @@ modules:
        - cp -R translations /app/
     sources:
           - type: archive
-            url:  https://github.com/vikdevelop/SaveDesktop/archive/refs/tags/2.9.9.1j.tar.gz
-            sha256: 86c0e323082dbb9494286e8cfaf7d27cc638460eaad7cc0ca556844c4f087976
+            url:  https://github.com/vikdevelop/SaveDesktop/archive/refs/tags/3.0.tar.gz
+            sha256: 6f67c59ab72010f83ae6ea511ae2a352a301672c3eb44cd99d184fc8fcecf942
