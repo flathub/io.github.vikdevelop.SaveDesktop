@@ -44,7 +44,6 @@ finish-args:
     - --talk-name=org.kde.ksmserver
     # ensuring to FileChooserNative will work correctly
     - --talk-name=org.freedesktop.FileManager1
-    - --talk-name=org.freedesktop.portal.FileChooser
     - --env=DCONF_USER_CONFIG_DIR=.config/dconf
     - --filesystem=xdg-run/dconf
     - --talk-name=ca.desrt.dconf
@@ -76,4 +75,4 @@ modules:
     sources:
           - type: archive
             url:  https://github.com/vikdevelop/SaveDesktop/archive/refs/tags/3.0.1b.tar.gz
-            sha256: deac1c24b59a10e28a771d00fd0d454c3721a797a117e2f9f67daa49b31dde7c
+            sha256: dfab226549c94f2b56ff54ee08bb07fd36788b459747a0e4e37386667e08f599
