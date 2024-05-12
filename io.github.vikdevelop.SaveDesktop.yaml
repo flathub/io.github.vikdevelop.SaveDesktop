@@ -1,6 +1,6 @@
 app-id: io.github.vikdevelop.SaveDesktop
 runtime: org.gnome.Platform
-runtime-version: '45'
+runtime-version: '46'
 sdk: org.gnome.Sdk
 command: run.sh
 finish-args:
@@ -75,5 +75,5 @@ modules:
        - cp -R translations /app/
     sources:
           - type: archive
-            url:  https://github.com/vikdevelop/SaveDesktop/archive/refs/tags/3.2.3.tar.gz
-            sha256: 358c14df10085ad298f2b7353c9f35b6cc41699940c9c5f96c4678793725117b
+            url:  https://github.com/vikdevelop/SaveDesktop/archive/refs/tags/3.2.4.tar.gz
+            sha256: 895c58924e09f44b645acd748fc5429acfb943af629776680edae3ad352960bd
