@@ -9,6 +9,9 @@ finish-args:
     - --socket=wayland
     - --socket=fallback-x11
     - --device=dri
+    # for opening cloud folders properly
+    - --filesystem=xdg-run/gvfs
+    - --filesystem=xdg-run/gvfsd
     # load Desktop environment config files
     - --filesystem=~/.config
     # load Desktop environment data files (e.g. backgrounds, extensions, etc.)
