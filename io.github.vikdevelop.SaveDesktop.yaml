@@ -4,7 +4,7 @@ desktop-file-name-suffix: ' (Beta)'
 runtime: org.gnome.Platform
 runtime-version: '46'
 sdk: org.gnome.Sdk
-command: run.sh
+command: savedesktop
 finish-args:
     - --share=ipc
     - --share=network
@@ -64,7 +64,7 @@ modules:
   - name: savedesktop
     buildsystem: simple
     build-commands:
-       - install -Dm755 -t /app/bin run.sh
+       - install -Dm755 -t /app/bin savedesktop
        - cp -R src/* /app
        - install -D -t /app/share/applications flatpak/io.github.vikdevelop.SaveDesktop.desktop
        - install -D -t /app/share/icons/hicolor/scalable/apps flatpak/icons/io.github.vikdevelop.SaveDesktop.svg
@@ -80,5 +80,5 @@ modules:
        - cp -R translations /app/
     sources:
           - type: archive
-            url:  https://github.com/vikdevelop/SaveDesktop/archive/refs/tags/3.4-beta-05.tar.gz
-            sha256: 3878bd211dc00d278603949228a407bdddc774843438d794c9e01a1628f15a39
+            url:  https://github.com/vikdevelop/SaveDesktop/archive/refs/tags/3.4-beta-06.tar.gz
+            sha256: 87527c0b14da4b87c6ecf085d409641bba0ec60ef5c78f9a5e4ba1b1436a5fd7
