@@ -80,5 +80,5 @@ modules:
        - cp -R translations /app/
     sources:
           - type: archive
-            url:  https://github.com/vikdevelop/SaveDesktop/archive/refs/tags/3.4-beta-06-hotfix-1.tar.gz
-            sha256: 8afdae28a7c232daee78ecf46aac49d133830ca42dcd355d58b528b999306020
+            url:  https://github.com/vikdevelop/SaveDesktop/archive/refs/tags/3.4-beta-07.tar.gz
+            sha256: 9fd61859d86daca6f24bab8ccde78eda0ee0993e82bb77f236b9dbb9d95db5df
