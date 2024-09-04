@@ -2,13 +2,16 @@ app-id: io.github.vikdevelop.SaveDesktop
 runtime: org.gnome.Platform
 runtime-version: '46'
 sdk: org.gnome.Sdk
-command: run.sh
+command: savedesktop
 finish-args:
     - --share=ipc
     - --share=network
     - --socket=wayland
     - --socket=fallback-x11
     - --device=dri
+    # for opening cloud folders properly
+    - --filesystem=xdg-run/gvfs
+    - --filesystem=xdg-run/gvfsd
     # load Desktop environment config files
     - --filesystem=~/.config
     # load Desktop environment data files (e.g. backgrounds, extensions, etc.)
@@ -59,7 +62,7 @@ modules:
   - name: savedesktop
     buildsystem: simple
     build-commands:
-       - install -Dm755 -t /app/bin run.sh
+       - install -Dm755 -t /app/bin savedesktop
        - cp -R src/* /app
        - install -D -t /app/share/applications flatpak/io.github.vikdevelop.SaveDesktop.desktop
        - install -D -t /app/share/icons/hicolor/scalable/apps flatpak/icons/io.github.vikdevelop.SaveDesktop.svg
@@ -75,5 +78,5 @@ modules:
        - cp -R translations /app/
     sources:
           - type: archive
-            url:  https://github.com/vikdevelop/SaveDesktop/archive/refs/tags/3.3.2b.tar.gz
-            sha256: 5deb511e8c06327f9ca51909319b6ef89c493d121e5459a7587d05240c7678a7
+            url:  https://github.com/vikdevelop/SaveDesktop/archive/refs/tags/3.4.tar.gz
+            sha256: f7067c31077a7891f5f1ad62882dfc0d7225de9cf7b93de187b83bc5324ab5bc
