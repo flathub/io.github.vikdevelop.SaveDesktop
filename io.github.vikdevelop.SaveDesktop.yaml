@@ -79,4 +79,4 @@ modules:
     sources:
           - type: archive
             url:  https://github.com/vikdevelop/SaveDesktop/archive/refs/tags/3.4-hotfix-1.tar.gz
-            sha256: 4d4b912cc25a0fb71b5cb6173c3903552e88b290c3880f3ad7f8efee57c8b32b
+            sha256: a168ddbacbbd664ae5d205e77d1121e28f0556ac983d3b1ecaab571eb36448c6
