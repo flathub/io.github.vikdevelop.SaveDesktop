@@ -41,12 +41,14 @@ finish-args:
     - --filesystem=~/.local/share/flatpak/app:ro
     # save user data of installed flatpak apps
     - --filesystem=~/.var/app:ro
-    # logout from session (GNOME-based environments) for changes to the desktop configuration to take effect
+    # log out from session (GNOME-based environments) for changes to the desktop configuration to take effect
     - --talk-name=org.gnome.SessionManager
-    # logout from session (Xfce) for changes to the Xfce desktop configuration to take effect
+    # log out from session (Xfce) for changes to the Xfce desktop configuration to take effect
     - --talk-name=org.xfce.SessionManager
-    # logout from session (KDE5) for changes to the KDE5 desktop configuration to take effect
-    - --talk-name=org.kde.ksmserver
+    # log out from session (KDE5) for changes to the KDE5 desktop configuration to take effect
+    - --talk-name=org.kde.LogoutPrompt
+    # log out from session (COSMIC Rust) for changes to the COSMIC Rust desktop configuration to take effect
+    - --talk-name=com.system76.CosmicSession
     # ensuring to FileChooserNative will work correctly
     - --talk-name=org.freedesktop.FileManager1
     - --env=DCONF_USER_CONFIG_DIR=.config/dconf
@@ -80,5 +82,5 @@ modules:
        - cp -R translations /app/
     sources:
           - type: archive
-            url:  https://github.com/vikdevelop/SaveDesktop/archive/refs/tags/3.4-beta-07.tar.gz
-            sha256: 9fd61859d86daca6f24bab8ccde78eda0ee0993e82bb77f236b9dbb9d95db5df
+            url:  https://github.com/vikdevelop/SaveDesktop/archive/refs/tags/3.4.1-beta.tar.gz
+            sha256: 8bb701d10b7d3e1cb3bbb35986667536e2b7f2a059f40af2334b596f8d205192
