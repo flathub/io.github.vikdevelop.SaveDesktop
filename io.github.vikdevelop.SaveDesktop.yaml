@@ -2,7 +2,7 @@ app-id: io.github.vikdevelop.SaveDesktop
 default-branch: beta
 desktop-file-name-suffix: ' (Beta)'
 runtime: org.gnome.Platform
-runtime-version: '46'
+runtime-version: '47'
 sdk: org.gnome.Sdk
 command: savedesktop
 finish-args:
@@ -82,5 +82,5 @@ modules:
        - cp -R translations /app/
     sources:
           - type: archive
-            url:  https://github.com/vikdevelop/SaveDesktop/archive/refs/tags/3.4.1-beta-2024.09.18.tar.gz
-            sha256: a2b0179b4c8289e0c2e4a6b1bbc6997567a11994de44f24ad58474e9a78be172
+            url:  https://github.com/vikdevelop/SaveDesktop/archive/refs/tags/3.4.1-beta-2024.09.22.tar.gz
+            sha256: fe75dbebe466f0aa52b37b40f6de30ac12fa755c1f1eaf883ca3448b1e4642e8
