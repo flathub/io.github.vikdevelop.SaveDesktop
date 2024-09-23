@@ -1,6 +1,6 @@
 app-id: io.github.vikdevelop.SaveDesktop
 runtime: org.gnome.Platform
-runtime-version: '46'
+runtime-version: '47'
 sdk: org.gnome.Sdk
 command: savedesktop
 finish-args:
@@ -39,12 +39,14 @@ finish-args:
     - --filesystem=~/.local/share/flatpak/app:ro
     # save user data of installed flatpak apps
     - --filesystem=~/.var/app:ro
-    # logout from session (GNOME-based environments) for changes to the desktop configuration to take effect
+    # log out from session (GNOME-based environments) for changes to the desktop configuration to take effect
     - --talk-name=org.gnome.SessionManager
-    # logout from session (Xfce) for changes to the Xfce desktop configuration to take effect
+    # log out from session (Xfce) for changes to the Xfce desktop configuration to take effect
     - --talk-name=org.xfce.SessionManager
-    # logout from session (KDE5) for changes to the KDE5 desktop configuration to take effect
-    - --talk-name=org.kde.ksmserver
+    # log out from session (KDE5) for changes to the KDE5 desktop configuration to take effect
+    - --talk-name=org.kde.LogoutPrompt
+    # log out from session (COSMIC Rust) for changes to the COSMIC Rust desktop configuration to take effect
+    - --talk-name=com.system76.CosmicSession
     # ensuring to FileChooserNative will work correctly
     - --talk-name=org.freedesktop.FileManager1
     - --env=DCONF_USER_CONFIG_DIR=.config/dconf
@@ -78,5 +80,5 @@ modules:
        - cp -R translations /app/
     sources:
           - type: archive
-            url:  https://github.com/vikdevelop/SaveDesktop/archive/refs/tags/3.4-hotfix-1-3.tar.gz
-            sha256: c78de69b52ee30393a04cea68e5958b8395abb9ac87d6d1029f825126b91c387
+            url:  https://github.com/vikdevelop/SaveDesktop/archive/refs/tags/3.4.1.tar.gz
+            sha256: 6113b30052c72f862a5878e9bc89617154b61e0ae3431d2087773c38e631f127
