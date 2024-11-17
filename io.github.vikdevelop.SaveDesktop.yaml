@@ -55,7 +55,8 @@ finish-args:
     - --filesystem=xdg-run/dconf
     - --talk-name=ca.desrt.dconf
 modules:
-  - name: dconf
+  - name: dconf-amd64
+    only-arches: ['x86_64']
     buildsystem: simple
     build-commands:
       - cp -R * /app
@@ -63,6 +64,22 @@ modules:
       - type: archive
         url: https://github.com/vikdevelop/SaveDesktop/releases/download/2.9.5n/dconf_build.tar.xz
         sha256: 164fc714f96ef4b348665fc3617f54cfa5acf12df5c039d7a9d21ba1d86a2f2d
+  - name: dconf-aarch64
+    only-arches: ['aarch64']
+    buildsystem: meson
+    config-opts:
+    - "-Dsystemduserunitdir=/app/lib/systemd/user/"
+    - "-Dbash_completion=false"
+    - "-Dman=false"
+    cleanup:
+    - "/include"
+    - "/lib/pkgconfig"
+    - "/libexec"
+    - "/share/dbus-1"
+    sources:
+    - type: archive
+      url: https://download.gnome.org/sources/dconf/0.40/dconf-0.40.0.tar.xz
+      sha256: cf7f22a4c9200421d8d3325c5c1b8b93a36843650c9f95d6451e20f0bcb24533
   - name: savedesktop
     buildsystem: simple
     build-commands:
@@ -82,5 +99,5 @@ modules:
        - cp -R translations /app/
     sources:
           - type: archive
-            url:  https://github.com/vikdevelop/SaveDesktop/archive/refs/tags/3.5-beta-2024.11.09_hotfix_1.tar.gz
-            sha256: a2c19e0ddae7577cb04429545101a2377ff3c6ffe7299b1b1c45d98769877c34
+            url:  https://github.com/vikdevelop/SaveDesktop/archive/refs/tags/3.5-test-Nov17.tar.gz
+            sha256: 993d7547c2c9831d39566be6244fedbf0c02cb2996801317a8ba53cf0c3ce7b8
