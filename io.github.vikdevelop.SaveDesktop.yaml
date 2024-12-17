@@ -100,4 +100,4 @@ modules:
     sources:
           - type: archive
             url:  https://github.com/vikdevelop/SaveDesktop/archive/refs/tags/3.5-beta_2024-12-17.tar.gz
-            sha256: 22b523ad6349f4df834a57dac0b1d429405d69a0d6d9511d2693174a4ca3e736
+            sha256: b1f12044c5034da1f4f2105682f548d63ee002228bcfdac54c6e0434253ab0b6
