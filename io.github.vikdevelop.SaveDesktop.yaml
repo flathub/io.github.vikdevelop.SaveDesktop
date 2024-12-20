@@ -99,5 +99,5 @@ modules:
        - cp -R translations /app/
     sources:
           - type: git
-            source: https://github.com/vikdevelop/SaveDesktop.git
+            url: https://github.com/vikdevelop/SaveDesktop.git
             tag: 3.5.1-beta_2024-12-17_1
