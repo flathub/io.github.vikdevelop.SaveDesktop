@@ -100,4 +100,4 @@ modules:
     sources:
           - type: git
             url: https://github.com/vikdevelop/SaveDesktop.git
-            tag: nextcloud
+            tag: nextcloud_Dec23
