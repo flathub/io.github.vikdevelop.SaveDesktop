@@ -96,6 +96,6 @@ modules:
        - glib-compile-schemas /app/share/glib-2.0/schemas
        - cp -R translations /app/
     sources:
-          - type: archive
-            url:  https://github.com/vikdevelop/SaveDesktop/archive/refs/tags/3.5.tar.gz
-            sha256: b3aa7aa7b3072ce6fb5986e479e67e3ad67fa2a66fd865ffb2547a26ed7e1ab7
+          - type: git
+            url: https://github.com/vikdevelop/SaveDesktop.git
+            tag: 3.5.1
