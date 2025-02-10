@@ -46,8 +46,9 @@ finish-args:
     - --talk-name=org.kde.LogoutPrompt
     # log out from session (COSMIC Rust) for changes to the COSMIC Rust desktop configuration to take effect
     - --talk-name=com.system76.CosmicSession
-    # ensuring to FileChooserNative will work correctly
+    # ensuring to Gtk.FileDialog will work correctly
     - --talk-name=org.freedesktop.FileManager1
+    # Dconf permissions
     - --env=DCONF_USER_CONFIG_DIR=.config/dconf
     - --filesystem=xdg-run/dconf
     - --talk-name=ca.desrt.dconf
