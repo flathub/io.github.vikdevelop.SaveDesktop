@@ -94,9 +94,9 @@ modules:
        - install -D -t /app/share/icons/hicolor/128x128/apps flatpak/symbolic-icons/done.svg
        - install -D -t /app/share/metainfo flatpak/io.github.vikdevelop.SaveDesktop.metainfo.xml
        - install -D -t /app/share/glib-2.0/schemas flatpak/io.github.vikdevelop.SaveDesktop.gschema.xml
+       - sed -i 's/^v = "\(.*\)"/v = "\1-beta"/' /app/localization.py
        - glib-compile-schemas /app/share/glib-2.0/schemas
        - cp -R translations /app/
-       - sed -i 's/^v = "\(.*\)"/v = "\1-beta"/' localization.py
     sources:
           - type: git
             url: https://github.com/vikdevelop/SaveDesktop.git
