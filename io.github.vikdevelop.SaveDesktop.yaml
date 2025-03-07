@@ -82,7 +82,6 @@ modules:
   - name: savedesktop
     buildsystem: simple
     build-commands:
-       - sed -i 's/^v = "\(.*\)"/v = "\1-beta"/' localization.py
        - install -Dm755 -t /app/bin savedesktop
        - cp -R src/* /app
        - install -D -t /app/share/applications flatpak/io.github.vikdevelop.SaveDesktop.desktop
@@ -97,6 +96,7 @@ modules:
        - install -D -t /app/share/glib-2.0/schemas flatpak/io.github.vikdevelop.SaveDesktop.gschema.xml
        - glib-compile-schemas /app/share/glib-2.0/schemas
        - cp -R translations /app/
+       - sed -i 's/^v = "\(.*\)"/v = "\1-beta"/' localization.py
     sources:
           - type: git
             url: https://github.com/vikdevelop/SaveDesktop.git
