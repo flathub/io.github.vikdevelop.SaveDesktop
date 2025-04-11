@@ -2,7 +2,7 @@ app-id: io.github.vikdevelop.SaveDesktop
 default-branch: beta
 desktop-file-name-suffix: ' (Beta)'
 runtime: org.gnome.Platform
-runtime-version: '47'
+runtime-version: '48'
 sdk: org.gnome.Sdk
 command: savedesktop
 finish-args:
@@ -100,4 +100,4 @@ modules:
     sources:
           - type: git
             url: https://github.com/vikdevelop/SaveDesktop.git
-            tag: 3.5.3-1
+            tag: 3.5.4
