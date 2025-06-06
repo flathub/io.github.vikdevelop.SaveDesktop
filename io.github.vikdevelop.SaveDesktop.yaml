@@ -100,4 +100,4 @@ modules:
     sources:
           - type: git
             url: https://github.com/vikdevelop/SaveDesktop.git
-            tag: 3.6_5-beta
+            tag: 3.6_6-beta
