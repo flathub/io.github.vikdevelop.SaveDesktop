@@ -3,7 +3,7 @@
     "desktop-file-name-suffix" : " (Beta)",
     "default-branch": "beta",
     "runtime" : "org.gnome.Platform",
-    "runtime-version" : "48",
+    "runtime-version" : "49",
     "sdk" : "org.gnome.Sdk",
     "command" : "savedesktop",
     "finish-args" : [
@@ -112,7 +112,7 @@
                 {
                    "type" : "git",
                     "url" : "https://github.com/vikdevelop/SaveDesktop",
-                    "tag" : "3.7-beta-02"
+                    "tag" : "3.7"
                 }
             ],
             "config-opts" : [
