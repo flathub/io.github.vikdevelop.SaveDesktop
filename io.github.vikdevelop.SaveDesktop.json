@@ -112,7 +112,7 @@
                 {
                    "type" : "git",
                     "url" : "https://github.com/vikdevelop/SaveDesktop",
-                    "tag" : "3.7"
+                    "tag" : "3.7.1"
                 }
             ],
             "config-opts" : [
