@@ -89,7 +89,7 @@
                 {
                    "type" : "git",
                     "url" : "https://github.com/vikdevelop/SaveDesktop",
-                    "tag" : "3.8.1"
+                    "tag" : "3.9"
                 }
             ],
             "config-opts" : [
