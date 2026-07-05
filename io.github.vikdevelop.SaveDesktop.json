@@ -1,7 +1,7 @@
 {
     "app-id" : "io.github.vikdevelop.SaveDesktop",
     "runtime" : "org.gnome.Platform",
-    "runtime-version" : "49",
+    "runtime-version" : "50",
     "sdk" : "org.gnome.Sdk",
     "command" : "savedesktop",
     "finish-args" : [
@@ -14,12 +14,8 @@
         "--filesystem=~/.config",
         "--filesystem=~/.local/share",
         "--filesystem=xdg-download",
-        "--filesystem=xdg-music",
-        "--filesystem=xdg-videos",
-        "--filesystem=xdg-documents",
-        "--filesystem=xdg-public-share",
-        "--filesystem=xdg-pictures",
         "--filesystem=xdg-desktop",
+        "--filesystem=xdg-documents",
         "--filesystem=~/.themes:create",
         "--filesystem=~/.icons:create",
         "--filesystem=~/.cinnamon:create",
@@ -44,15 +40,14 @@
             "subdir" : "CPP/7zip/Bundles/Alone2",
             "build-commands" : [
                 "make -j $FLATPAK_BUILDER_N_JOBS -f makefile.gcc",
-                "install -D ./_o/7zz -t /app/bin",
-                "ln -s /app/bin/7zz /app/bin/7z"
+                "install -D ./_o/7zz /app/bin/7z"
             ],
             "sources" : [
                 {
                     "type" : "git",
                     "url" : "https://github.com/ip7z/7zip.git",
-                    "tag" : "25.01",
-                    "commit" : "5e96a8279489832924056b1fa82f29d5837c9469"
+                    "tag" : "26.02",
+                    "commit" : "f9d78aff31a5f2521ae7ddbdc97c4a8855808959"
                 }
             ],
             "x-checker-data" : {
@@ -71,13 +66,17 @@
                     "type" : "archive",
                     "url" : "https://github.com/vikdevelop/SaveDesktop/releases/download/3.7.1/dconf-build-override-049-amd64.tar.xz",
                     "sha256" : "a1e644bbf755cccf531260a78bcc631d18c29518f86004256cd4b32d9e8a85f3",
-                    "only-arches" : ["x86_64"]
+                    "only-arches" : [
+                        "x86_64"
+                    ]
                 },
                 {
                     "type" : "archive",
                     "url" : "https://github.com/vikdevelop/SaveDesktop/releases/download/3.7.1/dconf-build-override-049-aarch64.tar.xz",
                     "sha256" : "a60390607bda144a17b56e0557ec9bb3d1b7a5c6465270652769cfe7642dd528",
-                    "only-arches" : ["aarch64"]
+                    "only-arches" : [
+                        "aarch64"
+                    ]
                 }
             ]
         },
@@ -89,7 +88,8 @@
                 {
                    "type" : "git",
                     "url" : "https://github.com/vikdevelop/SaveDesktop",
-                    "tag" : "4.0"
+                    "tag" : "4.1",
+                    "commit": "5d49ab62b9d1283393eea6eeb7228147fe037ed5"
                 }
             ],
             "config-opts" : [
