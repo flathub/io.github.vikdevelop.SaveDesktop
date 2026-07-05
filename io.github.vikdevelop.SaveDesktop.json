@@ -88,8 +88,8 @@
                 {
                    "type" : "git",
                     "url" : "https://github.com/vikdevelop/SaveDesktop",
-                    "tag" : "4.1-hotfix",
-                    "commit": "9ae7533b5f6515a52ad30f44171d6ca21edca082"
+                    "tag" : "4.1",
+                    "commit": "da6174bc4cab109d0fd2cc2ba2d347f509982a04"
                 }
             ],
             "config-opts" : [
