@@ -88,7 +88,7 @@
                 {
                    "type" : "git",
                     "url" : "https://github.com/vikdevelop/SaveDesktop",
-                    "tag" : "4.1-rc",
+                    "tag" : "4.1",
                     "commit": "5d49ab62b9d1283393eea6eeb7228147fe037ed5"
                 }
             ],
